@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Site">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="author" content="AR">
+    <title>Start-page</title>
+
+    
+    <link href="https://arboy.is-a.dev/assets/css/styles.css" rel="stylesheet">
+  </head>
+
+
+    <div class="welcome">
+        <h4 id="date"></h4>
+        <h1 class="greeting" id="brand-color"></h1>
+    </div>
+
+        <div class="head">
+            <p class="command">ㅤ  cd ~/<span class="blinking">_</span></p>
+        </div>
+
+
+        <div class="bookmarks">
+            <div class="category">
+              <div class="links">
+                <li class="title">work</li>
+                <li><a id="brand-link" href="http://search.in.projectsegfau.lt/">Searx</a></li>
+                <li><a id="brand-link" href="https://github.com/arboygo/">github</a></li>
+              </div>
+            </div>
+      
+            <div class="category">
+              <div class="links">
+                <li class="title">dev</li>
+                <li><a id="brand-link" href="https://docs.helix-editor.com">helix</a></li>
+                <li><a id="brand-link" href="https://devdocs.io/">devdocs</a></li>
+              </div>
+            </div>
+      
+            <div class="category">
+              <div class="links">
+                <li class="title">play</li>
+                <li><a id="brand-link" href="https://piped.in.projectsegfau.lt/">piped</a></li>
+                <li><a id="brand-link" href="https://efy.piped.pages.dev/">piped dev</a></li>
+                <li><a id="brand-link" href="https://lingva.ml">lingva</a></li>
+              </div>
+            </div>
+            <div class="category">
+                <div class="links">
+                  <li class="title">social</li>
+                  <li><a id="brand-link" href="https://fosstodon.org/">mastodon</a></li>
+                  <li><a id="brand-link" href="https://app.element.io">element</a></li>
+                </div>
+              </div>
+          </div>
+        </div>
+      </body>
+</html>
+
+<script>
+let $ = document.querySelector.bind(document);
+
+    function date() {
+        let currentDate = new Date();
+        let dateOptions = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        };
+        let date = currentDate.toLocaleDateString("en-GB", dateOptions);
+        $('#date').innerHTML = date;
+    }
+
+    function greet() {
+        let currentTime = new Date();
+        let greet = Math.floor(currentTime.getHours() / 6);
+        switch (greet) {
+            case 0:
+                $('.greeting').innerHTML = "Good night!";
+                break;
+            case 1:
+                $('.greeting').innerHTML = "Good morning!";
+                break;
+            case 2:
+                $('.greeting').innerHTML = "Good afternoon!";
+                break;
+            case 3:
+                $('.greeting').innerHTML = "Good evening!";
+                break;
+        }
+    }
+    date();
+    greet();
+</script>

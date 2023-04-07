@@ -1,0 +1,115 @@
+:root {
+    /* Colors */
+  --brand-color : #eb4f4f;
+  --brand-link-color : darkred;
+  --brand-sec-color : #4389d8;
+  }
+  
+  html,
+  body {
+      background: #FFF;
+      font-family: "Fira Code";
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+  }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.info {
+    margin-left: 10vw;
+    margin-top: 8vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info #date {
+    text-transform: uppercase;
+    margin-bottom: -0.8rem;
+}
+
+.info #greeting {
+    font-size: min(3rem, 9vh);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+}
+
+.bookmarks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+li {
+    font-size: 16px;
+    list-style-type: none;
+    padding: 5px
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+.blinking {
+    animation: opacity 1s ease-in-out infinite;
+    opacity: 1;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
