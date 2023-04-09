@@ -79,7 +79,7 @@ body {
 li {
     font-size: 16px;
     list-style-type: none;
-    padding: 5px
+    padding: 5px;
 }
 
 a:link {
@@ -100,6 +100,17 @@ a:hover {
     opacity: 1;
 }
 
+br {
+    display: block;
+    margin: 10px 0;
+    line-height:22px;
+    content: " ";
+}
+
+#date, .title {
+    color: #FFF;
+}
+ 
 @keyframes opacity {
     0% {
         opacity: 1;
