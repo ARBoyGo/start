@@ -1,76 +1,86 @@
 <!doctype html>
 <html lang="en" class="h-100">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Site">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <meta name="author" content="AR">
-        <title>Start-page</title>
-    </head>
-    <body>
-        <div class="info">
-            <h4 id="date"></h4>
-            <h1 id="greeting"></h1>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Site">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="author" content="AR">
+    <title>Start-page</title>
+</head>
+
+<body id="main">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a>NON-FOSS</a>
+        <a id="hover" href="https://discord.com/login">Discord</a>
+        <a id="hover" href="https://www.instagram.com/">Instagram</a>
+    </div>
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <div class="info">
+        <h4 id="date"></h4>
+        <h1 id="greeting"></h1>
+    </div>
+    <div class="container">
+        <div class="head">
+            <p class="command">ㅤ cd ~/<span class="blinking">_</span>ㅤㅤㅤㅤㅤㅤㅤ</p>
         </div>
-        <div class="container">
-            <div class="head">
-                <p class="command">ㅤ  cd ~/<span class="blinking">_</span>ㅤㅤㅤㅤㅤㅤㅤ</p>
-            </div>
-            <div class="bookmarks">
-                <div class="category">
-                    <div class="links">
-                        <li class="title">work</li>
-                        <li>
-                            <a id="brand-link" href="http://search.in.projectsegfau.lt/">searx</a>
-                        </li>
-                        <li>
-                            <a id="brand-link" href="https://github.com/arboygo/">github</a>
-                        </li>
-                    </div>
-                </div>
-
-                <div class="category">
-                    <div class="links">
-                        <li class="title">dev</li>
-                        <li>
-                            <a id="brand-link" href="https://docs.helix-editor.com">helix</a>
-                        </li>
-                        <li>
-                            <a id="brand-link" href="https://devdocs.io/">devdocs</a>
-                        </li>
-                    </div>
-                </div>
-
-                <div class="category">
-                    <div class="links">
-                        <li class="title">social</li>
-                        <li>
-                            <a id="brand-link" href="https://fosstodon.org/">mastodon</a>
-                        </li>
-                        <li>
-                            <a id="brand-link" href="https://app.element.io">element</a>
-                        </li>
-                    </div>
-                </div>
-
-                <div class="category">
-                    <div class="links">
-                        <li class="title">play</li>
-                        <li>
-                            <a id="brand-link" href="https://piped.in.projectsegfau.lt/">piped</a>
-                        </li>
-                        <li>
-                            <a id="brand-link" href="https://efy.piped.pages.dev/">piped dev</a>
-                        </li>
-                        <li>
-                            <a id="brand-link" href="https://lingva.ml">lingva</a>
-                        </li>
-                    </div>
+        <div class="bookmarks">
+            <div class="category">
+                <div class="links">
+                    <li class="title">work</li>
+                    <li>
+                        <a id="brand-link" href="http://search.in.projectsegfau.lt/">searx</a>
+                    </li>
+                    <li>
+                        <a id="brand-link" href="https://github.com/arboygo/">github</a>
+                    </li>
                 </div>
             </div>
-        </body>
-    </body>
+
+            <div class="category">
+                <div class="links">
+                    <li class="title">dev</li>
+                    <li>
+                        <a id="brand-link" href="https://docs.helix-editor.com">helix</a>
+                    </li>
+                    <li>
+                        <a id="brand-link" href="https://devdocs.io/">devdocs</a>
+                    </li>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="links">
+                    <li class="title">social</li>
+                    <li>
+                        <a id="brand-link" href="https://fosstodon.org/">mastodon</a>
+                    </li>
+                    <li>
+                        <a id="brand-link" href="https://app.element.io">element</a>
+                    </li>
+                </div>
+            </div>
+
+            <div class="category">
+                <div class="links">
+                    <li class="title">play</li>
+                    <li>
+                        <a id="brand-link" href="https://piped.in.projectsegfau.lt/">piped</a>
+                    </li>
+                    <li>
+                        <a id="brand-link" href="https://efy.piped.pages.dev/">piped dev</a>
+                    </li>
+                    <li>
+                        <a id="brand-link" href="https://lingva.ml">lingva</a>
+                    </li>
+                </div>
+            </div>
+        </div>
+</body>
+</body>
+
 </html>
 
 <script>
@@ -104,4 +114,18 @@
     }
     date();
     greet();
+</script>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+    }
 </script>
