@@ -10,21 +10,15 @@
     <title>Start-page</title>
 </head>
 
-<body id="main">
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a>NON-FOSS</a>
-        <a id="hover" href="https://discord.com/login">Discord</a>
-        <a id="hover" href="https://www.instagram.com/">Instagram</a>
-    </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<body>
     <div class="info">
         <h4 id="date"></h4>
         <h1 id="greeting"></h1>
     </div>
     <div class="container">
         <div class="head">
-            <p class="command">ㅤ cd ~/<span class="blinking">_</span>ㅤㅤㅤㅤㅤㅤㅤ</p>
+            <p class="command">> cd ~/<span class="blinking">_</span>
+            </p>
         </div>
         <div class="bookmarks">
             <div class="category">
@@ -79,7 +73,6 @@
             </div>
         </div>
 </body>
-</body>
 
 </html>
 
@@ -114,18 +107,4 @@
     }
     date();
     greet();
-</script>
-
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.body.style.backgroundColor = "white";
-    }
 </script>
