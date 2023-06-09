@@ -187,4 +187,8 @@ br {
         font-size: 24px;
         padding-top: 5px;
     }
+    .info #greeting {
+        color: var(--brand-color);
+        font-size: min(2.5rem, 8vh);
+    }
 }
