@@ -139,6 +139,13 @@ br {
     display: block;
 }
 
+#weather-icon {
+    font-size: 60px;
+    padding-left: 28rem;
+    padding-top: 10px;
+    display: block;
+}
+
 #date,
 .title,
 #temp,
@@ -163,7 +170,8 @@ br {
 
 /* Media query for mobile devices */
 @media (max-width: 768px) {
-    .weather {
+    .weather,
+    #weather-icon  {
         display: none; /* Hide the weather section on mobile devices */
     }
 }
@@ -172,7 +180,7 @@ br {
         font-size: 24px;
         padding-top: 0.3px;
         padding-bottom: 0.3px;
-        border: 1px solid var(--brand-color);
+        border: 2px solid var(--brand-color);
         width: 300px;
         height: 40px;
     }
