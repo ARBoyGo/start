@@ -16,6 +16,7 @@
             <h4 id="date"></h4>
             <h1 id="greeting"></h1>
         </div>
+        <div id="weather-icon"></div>
         <div class="weather">
             <p id="temp"></p>
             <p id="location"></p>
@@ -135,9 +136,26 @@
     
     document.getElementById("location").innerHTML = area + ", " + region +", " + country;
  
-    document.getElementById("weather-condition").innerHTML = weather_condition;
+    document.getElementById("weather-condition").innerHTML = weather_condition; 
  }
   getWeather();
    
  </script>
+<script>
+    fetch('https://wttr.in/?format=3')
+        .then(response => response.text())
+        .then(data => {
+            const weatherIcon = data.trim().split(' ')[2];
+
+            // Create a text node with the weather icon
+            const weatherIconElement = document.createTextNode(weatherIcon);
+
+            // Append the weather icon to the weather-icon <div>
+            document.getElementById('weather-icon').appendChild(weatherIconElement);
+        })
+        .catch(error => {
+            console.log('Error:', error);
+        });
+</script>
+
  
