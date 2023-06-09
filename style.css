@@ -65,6 +65,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-size: 2.5rem;
+    padding: 20px;
 }
 
 .category {
@@ -135,6 +136,7 @@ br {
 
 .weather {
     padding-right: 10rem;
+    display: block;
 }
 
 #date,
@@ -156,5 +158,33 @@ br {
 
     100% {
         opacity: 1;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .weather {
+        display: none; /* Hide the weather section on mobile devices */
+    }
+}
+@media (max-width: 768px) {
+    .terminal {
+        font-size: 24px;
+        padding-top: 0.3px;
+        padding-bottom: 0.3px;
+        border: 1px solid var(--brand-color);
+        width: 300px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .search-form {
+        width: 10rem;
+        outline: none;
+        border: none;
+        background-color: var(--bg-color);
+        color: var(--brand-sec-color);
+        font-size: 24px;
+        padding-top: 5px;
     }
 }
