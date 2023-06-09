@@ -22,6 +22,16 @@ body {
     min-height: 100%;
 }
 
+.search-form {
+    width: 20rem;
+    outline: none;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--brand-sec-color);
+    font-size: 30px;
+    padding-top: 10px;
+}
+
 .info {
     margin-left: 10vw;
     margin-top: 8vh;
@@ -111,14 +121,14 @@ br {
     content: " ";
 }
 
-.command {
+.terminal {
     font-size: 30px;
     padding-top: 0.5px;
     padding-bottom: 0.5px;
     border: 2px solid var(--brand-color);
-    text-align: start;
-    width: 300px;
-    height: 40px;
+    text-align: center;
+    width: 500px;
+    height: 60px;
 }
 
 #date,
