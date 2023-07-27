@@ -1,83 +1,186 @@
-:root {
-    /* Colors */
-    --brand-color: #eb4f4f;
-    --brand-link-color: darkred;
-    --brand-sec-color: #4389d8;
-    --bg-color: #000;
+@font-face {
+    font-family: 'DM Sans';
+    src: url(assets/fonts/DMSans-Regular.ttf);
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'DMS Sans';
+    src: url(assets/fonts/DMSans-Medium.ttf);
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'DMS Sans';
+    src: url(assets/fonts/DMSans-Bold.ttf);
+    font-weight: 700;
 }
 
-html,
-body {
-    background: var(--bg-color);
-    font-family: "Fira Code";
-    height: 100%;
+
+.site-wrapper {
+    background-image: url(assets/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-color: black;
+    display: table;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    height: 100%;
+    background-attachment: fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
-body {
+.start-page-left {
+    margin-top: 255px;
+    margin-left: 310px;
+    position: absolute;
+}
+
+.greeting {
+    color: #FFF;
+    font-family: 'DM Sans';
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -2.4px;
+    margin-bottom: 5px;
+}
+
+.today {
+    color: #FFF;
+    font-family: 'DM Sans';
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -1.8px;
+    margin-top: 5px;
+    margin-bottom: 64px
+}
+
+.search_div {
+    border-radius: 10px; 
+    background-color: #FFF;
+    opacity: .70;
+    width: 493px;
+    height: 60px;
     display: flex;
-    flex-direction: column;
-    min-height: 100%;
 }
 
-.search-form {
-    width: 20rem;
+.search_div img {
+    display:inline-block;
+    padding-top: 16.5px;
+    padding-left: 16.5px;
+    padding-right: 16.5px;
+}
+
+.search_input {
+    display:inline-block;
     outline: none;
     border: none;
-    background-color: var(--bg-color);
-    color: var(--brand-sec-color);
-    font-size: 30px;
-    padding-top: 10px;
+    color: #000;
+    font-family: 'DM Sans';
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: -1.2px;
+    width: 385px;
 }
 
-.info {
-    margin-left: 10vw;
-    margin-top: 8vh;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-.info #date {
-    text-transform: uppercase;
-    margin-bottom: -0.8rem;
+.bg_credit {
+    background-color: #FFF;
+    margin-top: 160px;
+    width: 194px;
+    height: 80px; 
+    border-radius: 10px; 
+    opacity: .70;
 }
 
-.info #greeting {
-    color: var(--brand-color);
-    font-size: min(3rem, 9vh);
+.bg_credit p {
+    padding-top: 13px;
+    padding-left: 18px;
+    color: #000;
+    font-family: 'DM Sans';
+    font-size: 13px;
+    font-weight: 400;
+    width: 143px; 
+    margin-bottom: 3px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
+.bg_credit .place {
+    width: 162px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.bg_credit img {
+    margin-top: 3px;
+}
+
+.start-page-right {
+    margin-left: 1070px;
+}
+
+.weather_div {
+    width: 492px;
+    height: 143px; 
+    margin-left: 290px;
+}
+
+#weather-icon {
+    position: absolute;
+    right: 550px;
+    margin-top: 135px;
+    font-size: 120px;
+    z-index: 1;
+}
+.weather-display {
+    opacity: .70;
+    position: absolute;
+    margin-top: 145px;
+    right: 170px;
+    border-radius: 15px; 
+    width: 344px;
+    height: 143px;
+    background-color: #FFF; 
+}
+
+#temp {
+    color: #000;
+    font-family: 'DM Sans';
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -1.8px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#location {
+    color: #000;
+    font-family: 'DM Sans';
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -1px; 
+    margin-left: 30px;
+    margin-top: 70px;
+}
+
+.bookmarks {
+    opacity: .70;
+    position: absolute;
+    width: 655px;
+    height: auto; 
+    right: 170px;
+    border-radius: 20px;
+    background: #FFF;
+    margin-top: 450px;
+    top: 0px;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    flex-grow: 1;
-}
-
-.head {
-    color: var(--brand-sec-color);
+    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2.5rem;
-    padding: 20px;
 }
 
 .category {
     display: flex;
     flex-direction: column;
     width: 12rem;
-}
-
-.bookmarks {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 .links {
@@ -89,114 +192,26 @@ body {
 }
 
 .title {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 li {
-    color: var(--brand-color);
-    font-size: 16px;
+    color: #000;
+    font-size: 20px;
     list-style-type: none;
     padding: 5px;
 }
 
 a:link {
     text-decoration: none;
-    color: var(--color-link);
+    color: #000;
 }
 
 a:visited {
-    color: var(--color-link-visited);
+    color: #000;
 }
 
 a:hover {
-    color: var(--color-link-hover);
+    color: #000;
 }
 
-.blinking {
-    animation: opacity 1s ease-in-out infinite;
-    opacity: 1;
-}
-
-br {
-    display: block;
-    margin: 10px 0;
-    line-height: 22px;
-    content: " ";
-}
-
-.terminal {
-    font-size: 30px;
-    padding-top: 0.5px;
-    padding-bottom: 0.5px;
-    border: 2px solid var(--brand-color);
-    text-align: center;
-    width: 500px;
-    height: 60px;
-}
-
-.weather {
-    padding-right: 10rem;
-    display: block;
-}
-
-#weather-icon {
-    font-size: 60px;
-    padding-left: 28rem;
-    padding-top: 10px;
-    display: block;
-}
-
-#date,
-.title,
-#temp,
-#location,
-#weather-condition {
-    color: #FFF;
-}
-
-@keyframes opacity {
-    0% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-    .weather,
-    #weather-icon  {
-        display: none; /* Hide the weather section on mobile devices */
-    }
-}
-@media (max-width: 768px) {
-    .terminal {
-        font-size: 24px;
-        padding-top: 0.3px;
-        padding-bottom: 0.3px;
-        border: 2px solid var(--brand-color);
-        width: 300px;
-        height: 40px;
-    }
-}
-@media (max-width: 768px) {
-    .search-form {
-        width: 10rem;
-        outline: none;
-        border: none;
-        background-color: var(--bg-color);
-        color: var(--brand-sec-color);
-        font-size: 24px;
-        padding-top: 5px;
-    }
-    .info #greeting {
-        color: var(--brand-color);
-        font-size: min(2.5rem, 8vh);
-    }
-}

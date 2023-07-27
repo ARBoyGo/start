@@ -1,108 +1,117 @@
-<!doctype html>
-<html lang="en" class="h-100">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Site">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="author" content="AR">
-    <title>Start-page</title>
-</head>
-
-<body>
-    <div class="info">
-        <div>
-            <h4 id="date"></h4>
-            <h1 id="greeting"></h1>
-        </div>
-        <div id="weather-icon"></div>
-        <div class="weather">
-            <p id="temp"></p>
-            <p id="location"></p>
-            <p id="weather-condition"></p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="head">
-            <p class="terminal">$ cd ~/<span class="blinking">_</span>
-            <input class="search-form" class="search-box" autofocus=""></p>
-        </div>
-        <div class="bookmarks">
-            <div class="category">
-                <div class="links">
-                    <li class="title">dev</li>
-                    <li>
-                        <a id="brand-link" href="https://github.com/arboygo/">github</a>
-                    </li>
-                    <li>
-                        <a id="brand-link" href="https://docs.helix-editor.com">helix</a>
-                    </li>
-                    <li>
-                        <a id="brand-link" href="https://devdocs.io/">devdocs</a>
-                    </li>
-                </div>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Start-Page</title>
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="site-wrapper">
+        <div class="start-page-left">
+            <div class="date_greeting">
+                <h1 class="greeting"></h1>
+                <h2 class="today">Today is <span id="date"></span></h2>
             </div>
-
-            <div class="category">
-                <div class="links">
-                    <li class="title">social</li>
-                    <li>
-                        <a id="brand-link" href="https://fosstodon.org/">mastodon</a>
-                    </li>
-                    <li>
-                        <a id="brand-link" href="https://app.element.io">element</a>
-                    </li>
+            <div class="search_div">
+                <div>
+                <img src="assets/search.svg" alt="search">
                 </div>
+                <input class="search_input search-form" type="text" placeholder="Search" autofocus="">
             </div>
-
-            <div class="category">
-                <div class="links">
-                    <li class="title">play</li>
-                    <li>
-                        <a id="brand-link" href="https://piped.in.projectsegfau.lt/">piped</a>
-                    </li>
-                    <li>
-                        <a id="brand-link" href="https://efy.piped.pages.dev/">efy piped</a>
-                    </li>
-                    <li>
-                        <a id="brand-link" href="https://lingva.ml">lingva</a>
-                    </li>
-                </div>
+            <div class="bg_credit">
+                <p>Photo by <a href="https://unsplash.com/@dreamholidays?utm_source=unsplash&utm_medium=referral&utm_content=arboy.is-a.dev">Dream Holidays </a>on <a href="https://unsplash.com/@dreamholidays?utm_source=unsplash&utm_medium=referral&utm_content=arboy.is-a.dev"><img src="assets/unsplash.svg" alt=""></a></p>
+                <p class="place">Place Munnar, Kerala, India</p>
             </div>
         </div>
+        <div class="start-page-right">
+            <div class="weather_div">
+                <div class="weather-icon">
+                    <p id="weather-icon"></p>
+                </div>
+                <div class="weather-display">
+                    <a id="temp"></a> 
+                    <p id="location"></p>
+                </div>
+            </div>
+            <div class="bookmarks">
+                <div class="category">
+                    <div class="links">
+                        <li class="title">work</li>
+                        <li>
+                            <a href="https://github.com/arboygo/">github</a>
+                        </li>
+                        <li>
+                            <a href="https://docs.helix-editor.com">helix</a>
+                        </li>
+                        <li>
+                            <a href="https://devdocs.io/">devdocs</a>
+                        </li>
+                        <li>
+                            <a href="https://figma.com">figma</a>
+                        </li>
+                    </div>
+                </div>
+
+                <div class="category">
+                    <div class="links">
+                        <li class="title">social</li>
+                        <li>
+                            <a href="https://fosstodon.org/">mastodon</a>
+                        </li>
+                        <li>
+                            <a href="https://app.element.io">element</a>
+                        </li>
+                        <li>
+                            <a href="https://discord.com/app">discord</a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com">instagram</a>
+                        </li>
+                    </div>
+                </div>
+    
+                <div class="category">
+                    <div class="links">
+                        <li class="title">play</li>
+                        <li>
+                            <a href="https://piped.in.projectsegfau.lt/">piped</a>
+                        </li>
+                        <li>
+                            <a href="https://efy.piped.pages.dev/">efy piped</a>
+                        </li>
+                        <li>
+                            <a href="https://lingva.ml">lingva</a>
+                        </li>
+                    </div>
+                </div>
+            </div>
         </div>
         <script src="searchScript.js"></script>
-</body>
-
+    </body>
 </html>
-
 <script>
-    let $ = document.querySelector.bind(document);
+let $ = document.querySelector.bind(document);
+function date() {
+    let currentDate = new Date();
+    let day = currentDate.getDate();
+    let month = currentDate.toLocaleString("default", { month: "long" });
+    let weekday = currentDate.toLocaleString("default", { weekday: "long" });
 
-    function date() {
-        let currentDate = new Date();
-        let dateOptions = {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric"
-        };
-        let date = currentDate.toLocaleDateString("en-GB", dateOptions);
-        $('#date').innerHTML = date;
-    }
-
-    function greet() {
+    let dateToday = `${day} ${month}, ${weekday}`;
+    $('#date').innerHTML = dateToday;
+}
+function greet() {
         let currentTime = new Date();
         let greet = Math.floor(currentTime.getHours() / 6);
         switch (greet) {
-            case 0: $('#greeting').innerHTML = "Good night!";
+            case 0: $('.greeting').innerHTML = "Good night!";
                 break;
-            case 1: $('#greeting').innerHTML = "Good morning!";
+            case 1: $('.greeting').innerHTML = "Good morning!";
                 break;
-            case 2: $('#greeting').innerHTML = "Good afternoon!";
+            case 2: $('.greeting').innerHTML = "Good afternoon!";
                 break;
-            case 3: $('#greeting').innerHTML = "Good evening!";
+            case 3: $('.greeting').innerHTML = "Good evening!";
                 break;
         }
     }
@@ -135,17 +144,15 @@
     document.getElementById("temp").innerHTML = temp + " °C";
     
     document.getElementById("location").innerHTML = area + ", " + region +", " + country;
- 
-    document.getElementById("weather-condition").innerHTML = weather_condition; 
  }
   getWeather();
    
  </script>
-<script>
+ <script>
     fetch('https://wttr.in/?format=3')
         .then(response => response.text())
         .then(data => {
-            const weatherIcon = data.trim().split(' ')[2];
+            const weatherIcon = data.trim().split(' ')[3];
 
             // Create a text node with the weather icon
             const weatherIconElement = document.createTextNode(weatherIcon);

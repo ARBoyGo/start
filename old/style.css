@@ -1,0 +1,202 @@
+:root {
+    /* Colors */
+    --brand-color: #eb4f4f;
+    --brand-link-color: darkred;
+    --brand-sec-color: #4389d8;
+    --bg-color: #000;
+}
+
+html,
+body {
+    background: var(--bg-color);
+    font-family: "Fira Code";
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.search-form {
+    width: 20rem;
+    outline: none;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--brand-sec-color);
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.info {
+    margin-left: 10vw;
+    margin-top: 8vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.info #date {
+    text-transform: uppercase;
+    margin-bottom: -0.8rem;
+}
+
+.info #greeting {
+    color: var(--brand-color);
+    font-size: min(3rem, 9vh);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.head {
+    color: var(--brand-sec-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2.5rem;
+    padding: 20px;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+}
+
+.bookmarks {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.title {
+    font-size: 20px;
+}
+
+li {
+    color: var(--brand-color);
+    font-size: 16px;
+    list-style-type: none;
+    padding: 5px;
+}
+
+a:link {
+    text-decoration: none;
+    color: var(--color-link);
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+a:hover {
+    color: var(--color-link-hover);
+}
+
+.blinking {
+    animation: opacity 1s ease-in-out infinite;
+    opacity: 1;
+}
+
+br {
+    display: block;
+    margin: 10px 0;
+    line-height: 22px;
+    content: " ";
+}
+
+.terminal {
+    font-size: 30px;
+    padding-top: 0.5px;
+    padding-bottom: 0.5px;
+    border: 2px solid var(--brand-color);
+    text-align: center;
+    width: 500px;
+    height: 60px;
+}
+
+.weather {
+    padding-right: 10rem;
+    display: block;
+}
+
+#weather-icon {
+    font-size: 60px;
+    padding-left: 28rem;
+    padding-top: 10px;
+    display: block;
+}
+
+#date,
+.title,
+#temp,
+#location,
+#weather-condition {
+    color: #FFF;
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .weather,
+    #weather-icon  {
+        display: none; /* Hide the weather section on mobile devices */
+    }
+}
+@media (max-width: 768px) {
+    .terminal {
+        font-size: 24px;
+        padding-top: 0.3px;
+        padding-bottom: 0.3px;
+        border: 2px solid var(--brand-color);
+        width: 300px;
+        height: 40px;
+    }
+}
+@media (max-width: 768px) {
+    .search-form {
+        width: 10rem;
+        outline: none;
+        border: none;
+        background-color: var(--bg-color);
+        color: var(--brand-sec-color);
+        font-size: 24px;
+        padding-top: 5px;
+    }
+    .info #greeting {
+        color: var(--brand-color);
+        font-size: min(2.5rem, 8vh);
+    }
+}
