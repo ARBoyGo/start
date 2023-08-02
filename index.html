@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Start-Page</title>
-        <script src="main.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body class="site-wrapper">
@@ -83,84 +82,14 @@
                         <li>
                             <a href="https://lingva.ml">lingva</a>
                         </li>
+                        <li>
+                            <a href="https://efy.ooo/os">EFY UI</a>
+                        </li>
                     </div>
                 </div>
             </div>
         </div>
         <script src="searchScript.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
-<script>
-let $ = document.querySelector.bind(document);
-function date() {
-    let currentDate = new Date();
-    let day = currentDate.getDate();
-    let month = currentDate.toLocaleString("default", { month: "long" });
-    let weekday = currentDate.toLocaleString("default", { weekday: "long" });
-
-    let dateToday = `${day} ${month}, ${weekday}`;
-    $('#date').innerHTML = dateToday;
-}
-function greet() {
-        let currentTime = new Date();
-        let greet = Math.floor(currentTime.getHours() / 6);
-        switch (greet) {
-            case 0: $('.greeting').innerHTML = "Good night!";
-                break;
-            case 1: $('.greeting').innerHTML = "Good morning!";
-                break;
-            case 2: $('.greeting').innerHTML = "Good afternoon!";
-                break;
-            case 3: $('.greeting').innerHTML = "Good evening!";
-                break;
-        }
-    }
-    date();
-    greet();
-</script>
-<script>
-    const api_url = "https://wttr.in/?format=j1";
-  
-    async function getWeather() {
- 
-    const response = await fetch(api_url);
- 
-    const data = await response.json();
-    
-    const weather = data.current_condition[0];
- 
-    let weather_condition = weather.weatherDesc[0].value
-    
-    let temp = weather.temp_C;
- 
-    const location = data.nearest_area[0];
-   
-    let area = location.areaName[0].value;
- 
-    let country = location.country[0].value;
- 
-    let region = location.region[0].value;
- 
-    document.getElementById("temp").innerHTML = temp + " °C";
-    
-    document.getElementById("location").innerHTML = area + ", " + region +", " + country;
- }
-  getWeather();
-   
- </script>
- <script>
-    fetch('https://wttr.in/?format=3')
-        .then(response => response.text())
-        .then(data => {
-            const weatherIcon = data.trim().split(' ')[3];
-
-            // Create a text node with the weather icon
-            const weatherIconElement = document.createTextNode(weatherIcon);
-
-            // Append the weather icon to the weather-icon <div>
-            document.getElementById('weather-icon').appendChild(weatherIconElement);
-        })
-        .catch(error => {
-            console.log('Error:', error);
-        });
-</script>
