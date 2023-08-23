@@ -1,8 +1,9 @@
-const displayWeather = document.querySelector("#temp")
+const weatherTemp = document.querySelector("#temp")
 const weatherLocation = document.querySelector("#location")
 const showDate = document.querySelector("#date")
-const weatherIconDisplay = document.querySelector(".greeting")
+const weatherIconDisplay = document.querySelector(".weather-icon")
 const greetingElement = document.querySelector(".greeting")
+const weatherDisplay = document.querySelector(".weather-display")
 
 function date() {
     let currentDate = new Date();
@@ -30,21 +31,26 @@ function greet() {
     date();
     greet();
 
-    const api_url = "https://wttr.in/?format=j1";
     async function getWeather() {
-        const response = await fetch(api_url);
-        const data = await response.json();
-        const weather = data.current_condition[0];
-        let weather_condition = weather.weatherDesc[0].value
-        let temp = weather.temp_C;
-        const location = data.nearest_area[0];
-        let area = location.areaName[0].value;
-        let country = location.country[0].value;
-        let region = location.region[0].value;
-        let locationElement = `${area}, ${region}, ${country}`;
-        displayWeather.innerHTML = `${temp} °C`;
-        weatherLocation.innerHTML = locationElement;
+        try {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            const weather = data.current_condition[0];
+            let weather_condition = weather.weatherDesc[0].value;
+            let temp = weather.temp_C;
+            const location = data.nearest_area[0];
+            let area = location.areaName[0].value;
+            let country = location.country[0].value;
+            let region = location.region[0].value;
+            let locationElement = `${area}, ${region}, ${country}`;
+            weatherTemp.innerHTML = `${temp} °C`;
+            weatherLocation.innerHTML = locationElement;
+        } catch (error) {
+            console.error('Error to load weather, Maybe wttr is down.', error);
+            weatherDisplay.classList.remove("weather-display");
+        }
     }
+    
     getWeather();
 
     fetch('https://wttr.in/?format=3')
@@ -55,5 +61,5 @@ function greet() {
         weatherIconDisplay.appendChild(weatherIconElement);
   })
   .catch(error => {
-      console.log('Error:', error);
+      console.log('Error to load weather, Maybe wttr is down.', error);
   });

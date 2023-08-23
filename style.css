@@ -288,6 +288,7 @@ a:hover {
         margin-top: 1px;
     }
     .weather_div {
+        display: none;
         width: auto;
         height: auto;
         margin-left: 0px;
