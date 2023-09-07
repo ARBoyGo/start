@@ -10,7 +10,7 @@ function redirectToSearch() {
   const query = searchInput.value;
 
   if (query.trim() !== '') {
-    const searchURL = `https://searxng.nicfab.eu/search?q=${encodeURIComponent(query)}`;
+    const searchURL = `https://search.demoniak.ch/search?q=${encodeURIComponent(query)}`;
     window.location.href = searchURL;
   }
 }

@@ -31,6 +31,7 @@ function greet() {
     date();
     greet();
 
+    const api_url = "https://wttr.in/?format=j1";
     async function getWeather() {
         try {
             const response = await fetch(api_url);
@@ -56,10 +57,15 @@ function greet() {
     fetch('https://wttr.in/?format=3')
     .then(response => response.text())
     .then(data => {
-        const weatherIcon = data.trim().split(' ')[3];
-        const weatherIconElement = document.createTextNode(weatherIcon);
-        weatherIconDisplay.appendChild(weatherIconElement);
-  })
-  .catch(error => {
-      console.log('Error to load weather, Maybe wttr is down.', error);
-  });
+        const weatherIconPattern = /[☀️🌤️🌥️☁️🌦️🌧️🌨️🌩️🌪️🌫️❄️🌨️💧💦💨]{2}/; 
+        const match = data.match(weatherIconPattern);
+
+        if (match) {
+            const weatherIcon = match[0];
+            const weatherIconElement = document.createTextNode(weatherIcon);
+            weatherIconDisplay.appendChild(weatherIconElement);
+        }
+    })
+    .catch(error => {
+        console.error('Error to load weather, Maybe wttr is down.', error);
+    });
