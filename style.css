@@ -16,7 +16,7 @@
 
 
 .site-wrapper {
-    background-image: url(assets/background.png);
+    background-image: url(assets/background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
@@ -121,13 +121,14 @@
     margin-left: 290px;
 }
 
-#weather-icon {
+.weather-icon {
     position: absolute;
     right: 550px;
-    margin-top: 135px;
+    margin-top: 15px;
     font-size: 120px;
     z-index: 1;
 }
+
 .weather-display {
     opacity: .70;
     position: absolute;
@@ -288,7 +289,6 @@ a:hover {
         margin-top: 1px;
     }
     .weather_div {
-        display: none;
         width: auto;
         height: auto;
         margin-left: 0px;
@@ -302,10 +302,10 @@ a:hover {
         right: 0px;
         margin-top: 60px; 
     }
-    #weather-icon {
-        margin-top: 60px;
+    .weather-icon {
+        margin-top: 0px;
         font-size: 64px; 
-        z-index: 1;
+        z-index: -1;
         text-align: center;
         right: 0px;
         bottom: 0px;
@@ -349,7 +349,7 @@ a:hover {
  }
 
  @media screen and (max-width: 750px) {
-
+    
     .start-page-left {
         margin-left: 0px;
         position: absolute;
